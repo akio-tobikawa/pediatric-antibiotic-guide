@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>小児抗菌薬 用量ナビ</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">薬</div>
+    <div>
+      <p class="eyebrow">SANFORD GUIDE 2026 / 表16</p>
+      <h1>小児抗菌薬 用量ナビ</h1>
+    </div>
+    <div class="topbar-note">生後28日超</div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow accent">QUICK REFERENCE</p>
+        <h2>薬品名・体重・年齢から<br /><span>投与量と投与方法</span>を確認</h2>
+        <p class="hero-copy">抗菌薬を薬品別に検索し、体重から1日量・1回量の目安を換算します。</p>
+      </div>
+      <div class="hero-badge"><span>39</span><small>原本ページ</small></div>
+    </section>
+
+    <section class="notice" role="note">
+      <span class="notice-icon">!</span>
+      <div><strong>医療者向けの参照ツールです</strong><p>本アプリは処方・投与の指示を代替しません。患者背景、感染部位、腎機能、製剤濃度、添付文書、施設基準を必ず確認してください。</p></div>
+    </section>
+
+    <section class="workspace">
+      <aside class="filters card">
+        <div class="section-label">検索条件</div>
+        <label for="drugSearch">薬品名・一般名</label>
+        <div class="search-box"><span>⌕</span><input id="drugSearch" type="search" placeholder="例：セフトリアキソン" autocomplete="off" /></div>
+        <div class="quick-row" id="quickRow"></div>
+        <div class="form-grid">
+          <label>体重（kg）<input id="weight" type="number" min="0.1" max="200" step="0.1" placeholder="例：12" /></label>
+          <label>年齢<input id="age" type="number" min="0" max="18" step="0.1" placeholder="例：4" /></label>
+        </div>
+        <label class="check"><input id="showAll" type="checkbox" /> 収載薬をすべて表示</label>
+        <button class="reset" id="reset">条件をリセット</button>
+        <div class="mini-source"><span class="dot"></span><div><strong>出典</strong><br />Sanford Guide 2026<br />表16 小児用量（生後&gt;28日）</div></div>
+      </aside>
+
+      <section class="results">
+        <div class="results-head"><div><div class="section-label">検索結果</div><h3 id="resultTitle">薬品を選択してください</h3></div><span class="count" id="count"></span></div>
+        <div id="resultsList" class="results-list"></div>
+        <div id="empty" class="empty card" hidden><div class="empty-icon">⌕</div><h3>該当する薬品がありません</h3><p>薬品名の一部を入力するか、「収載薬をすべて表示」を選択してください。</p></div>
+      </section>
+    </section>
+
+    <footer><span>Source: 15_表16_小児用量.pdf</span><span>最終確認：原本の該当ページを参照</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
